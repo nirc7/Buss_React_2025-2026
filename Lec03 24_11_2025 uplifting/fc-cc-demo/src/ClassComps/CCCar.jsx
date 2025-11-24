@@ -22,7 +22,8 @@ export default class CCCar extends Component {
 
     //this.state.speed = 500; //ERROR!
     console.log(this.state.speed);
-    this.setState({ speed: 500 });
+    //this.setState({ speed: this.state.speed + 1 });
+    this.setState(prevS => ({ speed: prevS.speed + 1 }));
     console.log(this.state.speed);
     //code...
   }
