@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import CCInputs from './CCInputs'
 import FCShowList from '../FuncComps/FCShowList'
+import FCInputs from '../FuncComps/FCInputs';
 
 export default class CCNamesListProj extends Component {
     constructor(props) {
@@ -32,7 +33,9 @@ export default class CCNamesListProj extends Component {
                 display: 'flex', flexDirection: 'row',
                 justifyContent: 'space-between', border: '2px solid green'
             }}>
-                <CCInputs getPerson={this.getPerson} />
+                {/* CCInputs cc = new CCInputs(); cc.render() */}
+                <CCInputs getPerson={this.getPerson} /> <br />
+                <FCInputs getPerson={this.getPerson} /> <br />
                 <FCShowList persons={this.state.persons} deletePerson={this.deletePerson} />
             </div>
         )

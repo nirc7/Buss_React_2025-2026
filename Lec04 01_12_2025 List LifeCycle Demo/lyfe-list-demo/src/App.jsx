@@ -5,11 +5,13 @@ import './App.css'
 import CCPerson from './ClassComps/CCPerson'
 import CCNaemsList from './ClassComps/CCNaemsList'
 import CCNamesListProj from './ClassComps/CCNamesListProj'
+import CCRefsDemo from './ClassComps/CCRefsDemo'
 
 function App() {
 
   return (
    <div>
+    <CCRefsDemo/>
     <CCNamesListProj/>
     <CCNaemsList/>
     {/* CCPerons cc= new CCPerson();
