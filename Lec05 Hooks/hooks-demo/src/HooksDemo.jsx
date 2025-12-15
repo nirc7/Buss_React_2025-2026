@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HooksDemo() {
     const [count, setCount] = useState(0);
@@ -6,7 +6,7 @@ export default function HooksDemo() {
 
     const [names, setNames] = useState({ name1: 'avi', name2: 'ben' });
 
-    console.log('here...');
+    console.log('start here...');
 
     const btnSet7 = () => {
         setCount(7);
@@ -17,9 +17,35 @@ export default function HooksDemo() {
     }
 
     const btnChgN1Best = () => {
-        setNames({ ...names,  name1: 'eli'});
+        setNames({ ...names, name1: 'eli' });
     }
 
+    useEffect(() => {
+        console.log('go to db with count=', count);
+    }, [count]);
+
+
+    useEffect(() => {
+        console.log('go to db with count2=', count2);
+    }, [count2]);
+
+    useEffect(() => {
+        console.log('go to db with count2= or count=', count2, count);
+    }, [count, count2]);
+
+    useEffect(() => {
+        console.log('general');
+    });
+
+    useEffect(() => {
+        console.log('did mount!');
+        return () => {
+            console.log('will unmount!'); 
+        }
+    }, []);
+
+
+    console.log('end here...');
 
     return (
         <div>
